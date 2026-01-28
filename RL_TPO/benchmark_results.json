@@ -1,0 +1,20 @@
+{
+  "alpacaeval_eval.jsonl": {
+    "baseline": "5.00\u00b10.00",
+    "tpo": "5.00\u00b10.00",
+    "delta": "+0.00",
+    "n": 20
+  },
+  "arena_hard.jsonl": {
+    "baseline": "5.00\u00b10.00",
+    "tpo": "5.00\u00b10.00",
+    "delta": "+0.00",
+    "n": 20
+  },
+  "hh_rlhf_eval.jsonl": {
+    "baseline": "5.00\u00b10.00",
+    "tpo": "5.00\u00b10.00",
+    "delta": "+0.00",
+    "n": 20
+  }
+}

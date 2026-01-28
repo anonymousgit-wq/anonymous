@@ -1,0 +1,31 @@
+# RL-TPO++ Config: PPO/GRPO using TPO-generated trajectories
+# Trains policy to imitate TPO's iterative improvements
+
+# RL Algorithm
+algorithm: "ppo"          # or "grpo"
+ppo_epochs: 4
+ppo_batch_size: 64
+learning_rate: 1e-5
+beta_kl: 0.02             # KL penalty
+
+# Training data
+n_trajectories: 10000     # queries to run TPO on
+max_query_len: 2048
+
+# Reward computation
+n_consensus_raters: 3     # maj@3 for stable rewards
+reward_model: "consensus_rm"
+
+# LoRA (efficient RL fine-tuning)
+lora_rank: 16
+lora_alpha: 32
+target_modules: ["q_proj", "v_proj", "k_proj", "o_proj"]
+
+# Evaluation during RL
+eval_interval: 1000
+eval_n_queries: 100
+
+# Logging / checkpointing
+log_dir: "logs/rl_tpo"
+checkpoint_interval: 5000
+wandb_project: "rl-tpo-plus-plus"

@@ -1,0 +1,28 @@
+# TPO Baseline Config (matches paper: D=2, N=5) [file:1]
+
+# Core loop parameters
+n_samples: 5          # samples per iteration (width)
+n_steps: 2            # iterations (depth)
+max_cache_size: 50    # cap to prevent OOM
+
+# Sampling
+temperature: 0.7      # matches paper
+top_p: 0.95
+max_tokens: 1024
+
+# Reward model scoring
+rm_temperature: 0.0
+rm_max_tokens: 256
+
+# Prompts (can override)
+use_paper_prompts: true
+
+# Evaluation
+eval_datasets:
+  - alpaca_eval_2_sample  # 500 queries
+  - arena_hard_sample     # 100 queries
+  - hh_rlhf_sample        # 500 queries
+
+# Logging
+log_dir: "logs/tpo_baseline"
+save_responses: true
